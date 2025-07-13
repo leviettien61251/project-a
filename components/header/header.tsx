@@ -9,6 +9,7 @@ import Menubar1 from "../menubar/menubar1";
 import Link from "next/link";
 
 export default function Header() {
+  
   return (
     <>
       <div
@@ -20,11 +21,13 @@ export default function Header() {
       >
         <div
           className={cn(
-            "w-full","max-lg:p-0",
-            "md:mt-5 md:mb-10 md:flex md:flex-row md:justify-between md:gap-20 md:px-[17rem]",
+            "w-full",
+            "max-lg:p-0",
+            "md:mt-5 md:mb-10 md:flex md:flex-row md:justify-between md:px-[17rem]",
+            // "min-md:px-5"
           )}
         >
-          <div className={cn("", "")}>
+          <div className={cn("", "max-sm:mb-2")}>
             <Link href={"/home"}>
               <Image src={logo2} width={100} height={70} alt="Name" />
             </Link>
@@ -32,8 +35,9 @@ export default function Header() {
           <div
             className={cn(
               "flex flex-row items-center",
-              "max-sm:flex-col",
+              "max-sm:w-full max-sm:flex-col",
               "md:gap-15",
+              "max-md:w-[50%]",
             )}
           >
             {/* Header */}
@@ -48,7 +52,7 @@ export default function Header() {
           )}
         >
           <div className="w-fit">
-            <Sidebar1 />
+            <Sidebar1 func={"not-filter"} where={"md"} />
           </div>
           <div className={cn("max-sm:col-span-6 max-sm:w-full")}>
             <Menubar1 />

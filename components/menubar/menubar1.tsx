@@ -37,12 +37,13 @@ export default function Menubar1() {
         className={cn(
           "h-[4rem] border-0 bg-black",
           "max-sm:w-[97%] max-sm:justify-center",
-          "md:w-full md:gap-10 md:rounded-none md:pr-[md:mx-[17rem]] md:pl-[17rem]",
+          "md:w-full md:gap-10 md:rounded-none md:pr-[17rem] md:pl-[17rem]",
+          "min-[768px]:max-sm:pl-5",
         )}
       >
         <MenubarMenu key={"all-product"}>
           <Link href={`/product/all-product`}>
-            <MenubarTrigger>All Product</MenubarTrigger>
+            <MenubarTrigger className="hover:bg-inherit"  >All Product</MenubarTrigger>
           </Link>
         </MenubarMenu>
         {abc?.map((item) => (

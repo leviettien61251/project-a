@@ -11,7 +11,7 @@ export default function Search1() {
         action={"/search"}
         className={cn(
           "relative flex h-auto items-center",
-          "md:w-[25rem]",
+          "md:w-[60%]",
           "max-sm:w-full",
         )}
       >
@@ -19,7 +19,7 @@ export default function Search1() {
           type="text"
           className={cn(
             "relative h-[3rem] w-full rounded-2xl border-3 border-black",
-            "max-md:w-[80%]",
+            "md:w-full",
             "max-sm:mr-2 max-sm:ml-2 max-sm:block",
           )}
           name="iSearch"
@@ -27,7 +27,7 @@ export default function Search1() {
         <Button
           type={"button"}
           className={cn(
-            "w-h-36 absolute right-0 z-10 m-1 rounded-xl",
+            "w-h-36 absolute right-0.5 z-10 m-1 rounded-xl",
             "max-sm:right-3",
           )}
         >

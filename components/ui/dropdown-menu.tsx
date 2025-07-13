@@ -26,6 +26,7 @@ function DropdownMenuTrigger({
   return (
     <DropdownMenuPrimitive.Trigger
       data-slot="dropdown-menu-trigger"
+      className={cn("data-[state=open]:font-bold")}
       {...props}
     />
   );
