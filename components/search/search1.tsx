@@ -11,7 +11,7 @@ export default function Search1() {
         action={"/search"}
         className={cn(
           "relative flex h-auto items-center",
-          "md:w-[60%]",
+          "md:w-full",
           "max-sm:w-full",
         )}
       >

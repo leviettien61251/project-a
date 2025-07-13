@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { useState } from "react";
 import { title } from "process";
 import { DropdownMenu } from "../ui/dropdown-menu";
+import FilterSidebar from "./filterSidebar";
 
 const sideBarTitle = [
   {
@@ -59,13 +60,14 @@ const filterTitle = [
     title: "Price",
   },
 ];
+
 interface SidebarProps {
   func: string;
   where: string;
 }
 export default function Sidebar1({ func, where }: SidebarProps) {
   const [showHide, setShowHide] = useState(false);
-  const [sideShow, setSideShow] = useState(false);
+  const [isOption, setIsOption] = useState("");
   return (
     <>
       <div
@@ -107,66 +109,14 @@ export default function Sidebar1({ func, where }: SidebarProps) {
         >
           <div className={cn("relative flex h-full w-full flex-col gap-2", "")}>
             {func === "filter" ? (
-              <>
-                <section key={func} className="relative h-full w-full">
-                  {/* ---------------------------------------------------------------------------------------------------- */}
-
-                  <div
-                    className={cn(
-                      "border-b-2",
-                      "md:px-10 md:py-5",
-                      "flex flex-row items-center justify-between",
-                    )}
-                  >
-                    <h2 className={cn("md:text-2xl")}>
-                      Filter{" "}
-                      <span className={cn("md:ml-6 md:text-lg")}>
-                        17 Item(s)
-                      </span>
-                    </h2>
-                    <ChevronLeft
-                      className="text-black"
-                      onClick={(event) => {
-                        setShowHide(!showHide);
-                        console.log(showHide);
-                      }}
-                    />
-                  </div>
-                  {/* ---------------------------------------------------------------------------------------------------- */}
-                  <ul
-                    className={cn(
-                      "flex flex-col",
-                      "md:mt-10 md:gap-5 md:px-10",
-                    )}
-                  >
-                    {filterTitle?.map((item) => (
-                      <>
-                        <li key={item.title} className={cn("flex flex-col")}>
-                          <div className="flex flex-row justify-between">
-                            <h3 className={cn("md:text-lg")}>{item.title}</h3>
-                            <Plus
-                              onClick={(e) => {
-                                setSideShow(!sideShow);
-                                console.log("aa");
-                              }}
-                            />
-                          </div>
-
-                          <div
-                            className={cn(
-                              "h-fit w-0 bg-blue-800",
-                              sideShow
-                                ? "h-[10rem] w-full overflow-visible"
-                                : "h-0 w-0 overflow-hidden",
-                              "transition-all delay-150 duration-1000",
-                            )}
-                          ></div>
-                        </li>
-                      </>
-                    ))}
-                  </ul>
-                </section>
-              </>
+              <FilterSidebar
+                func={func}
+                filterTitle={filterTitle}
+                isOption={isOption}
+                setIsOption={setIsOption}
+                showHide={showHide}
+                setShowHide={setShowHide}
+              />
             ) : (
               //{/* ---------------------------------------------------------------------------------------------------- */}
 
