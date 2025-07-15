@@ -6,20 +6,19 @@ import { useState } from "react";
 
 export default function Cart1() {
   const [hide, setHide] = [true];
-  
 
   return (
     <>
       {/* Use only on laptop, TV's screen */}
       <div
         className={cn(
-          "relative flex h-auto w-[15rem] items-center",
+          "relative flex h-auto items-center md:w-1/3",
           "max-sm:absolute max-sm:top-0 max-sm:right-0 max-sm:mt-2 max-sm:mr-2 max-sm:w-[48px]",
         )}
       >
         <div
           className={cn(
-            "relative h-[3rem] flex  w-full rounded-2xl border-black  items-center   shadow-xs md:border-3",
+            "relative flex h-[3rem] w-full items-center rounded-2xl border-black shadow-xs md:border-3",
             "max-sm:w-[48px]",
           )}
         >

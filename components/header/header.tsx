@@ -9,38 +9,30 @@ import Menubar1 from "../menubar/menubar1";
 import Link from "next/link";
 
 export default function Header() {
-  
   return (
     <>
       <div
         className={cn(
           "flex",
           "max-sm:relative max-sm:flex-col max-sm:gap-4",
-          "md:flex-col md:items-center md:pt-[0.5rem]",
+          "md:mb-4 md:flex-col md:items-center md:pt-[0.5rem]",
         )}
       >
         <div
           className={cn(
             "w-full",
             "max-lg:p-0",
-            "md:mt-5 md:mb-10 md:flex md:flex-row md:justify-between md:px-[17rem]",
+            "md:mt-5 md:mb-10 md:grid md:grid-cols-5",
             // "min-md:px-5"
           )}
         >
-          <div className={cn("", "max-sm:mb-2")}>
+          <div className=""></div>
+          <div className={cn("max-sm:w-full")}>
             <Link href={"/home"}>
               <Image src={logo2} width={100} height={70} alt="Name" />
             </Link>
           </div>
-          <div
-            className={cn(
-              "flex flex-row items-center",
-              "max-sm:w-full max-sm:flex-col",
-              "md:gap-15",
-              "max-md:w-[50%]",
-            )}
-          >
-            {/* Header */}
+          <div className={cn("md:col-span-3 md:flex flex-row  md:w-3/4 md:gap-10")}>
             <Search1 />
             <Cart1 />
           </div>
@@ -49,14 +41,19 @@ export default function Header() {
           className={cn(
             "bg-black md:w-full",
             "max-sm:grid max-sm:grid-cols-7 max-sm:items-center max-sm:justify-items-center",
+            "md:grid md:grid-cols-5",
           )}
         >
-          <div className="w-fit">
-            <Sidebar1 func={"not-filter"} where={"md"} />
+          <div className=""></div>
+          <div className={cn("md:col-span-3")}>
+            <div className="w-fit">
+              <Sidebar1 key_={"header"}  func={"not-filter"} where={"md"} />
+            </div>
+            <div className={cn("max-sm:col-span-6 max-sm:w-full")}>
+              <Menubar1 />
+            </div>
           </div>
-          <div className={cn("max-sm:col-span-6 max-sm:w-full")}>
-            <Menubar1 />
-          </div>
+          <div className=""></div>
         </div>
       </div>
     </>

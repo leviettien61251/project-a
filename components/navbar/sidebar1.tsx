@@ -62,15 +62,17 @@ const filterTitle = [
 ];
 
 interface SidebarProps {
+  key_: string;
   func: string;
   where: string;
 }
-export default function Sidebar1({ func, where }: SidebarProps) {
+export default function Sidebar1({ key_, func, where }: SidebarProps) {
   const [showHide, setShowHide] = useState(false);
   const [isOption, setIsOption] = useState("");
   return (
     <>
       <div
+        key={key_}
         className={cn(
           where === "md" ? "hidden" : "flex",
           "max-sm:h-fit max-sm:w-fit max-sm:bg-inherit",

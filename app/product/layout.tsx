@@ -8,6 +8,7 @@ export default function ProductLayout({
   return (
     <>
       <Header></Header>
+
       {children}
     </>
   );

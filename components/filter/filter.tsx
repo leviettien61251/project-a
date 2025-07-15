@@ -37,27 +37,14 @@ export default function Filter1() {
   const [isUpDown, setIsUpDown] = useState(false);
   return (
     <>
-      <div
-        className={cn(
-          "md:mx-[17rem] md:flex md:h-fit md:w-1/2 md:flex-row md:gap-2",
-        )}
-      >
-        {/* <Button
-          className="bg-white hover:bg-inherit"
-          onClick={(e) => {
-            console.log("option clicked");
-          }}
-        >
-          <SlidersVertical className="text-black" />
-        </Button> */}
-        <Sidebar1 func={"filter"} where={"filter"} />
+      <div className={cn("md:flex md:h-fit md:flex-row md:gap-2")}>
+        <Sidebar1 key_={"filter1"}  func={"filter"} where={"filter"} />
         {filterTitle?.map((item) => (
           <DropdownMenu key={item.title}>
             <DropdownMenuTrigger
               className={cn(
-                "flex flex-row items-center gap-3 justify-between  border-1 outline-none",
+                "flex flex-row items-center justify-between gap-3 border-1 outline-none",
                 "md:h-auto md:w-[9rem] md:rounded-full md:px-3 md:py-1",
-                
               )}
             >
               {item.title} <ChevronDown className="" />

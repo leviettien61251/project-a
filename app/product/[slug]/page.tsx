@@ -1,13 +1,15 @@
 import Filter1 from "@/components/filter/filter";
-import Header from "@/components/header/header";
+import { cn } from "@/lib/utils";
 
 export default function Page() {
   return (
     <>
-      <div className="h-[50rem] w-full">
-        <div className="h-[2rem] w-full"></div>
-        <Filter1 />
-        
+      <div className={cn("h-[50rem] w-full", "md:grid md:grid-cols-5")}>
+        <div></div>
+        <div className={cn("md:col-span-3")}>
+          <Filter1 />
+        </div>
+        <div></div>
       </div>
     </>
   );
