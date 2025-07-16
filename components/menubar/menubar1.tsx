@@ -54,11 +54,11 @@ export default function Menubar1() {
           </Link>
         </MenubarMenu>
         {abc?.map((item) => (
-          <MenubarMenu key={item.number}>
-            <Link href={`/product/${item.href}`}>
+          <Link href={`/product/${item.href}`}>
+            <MenubarMenu key={item.number}>
               <MenubarTrigger>{item.title}</MenubarTrigger>
-            </Link>
-          </MenubarMenu>
+            </MenubarMenu>
+          </Link>
         ))}
       </Menubar>
     </>

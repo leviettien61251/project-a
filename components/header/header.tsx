@@ -32,8 +32,11 @@ export default function Header() {
               <Image src={logo2} width={100} height={70} alt="Name" />
             </Link>
           </div>
-          <div className={cn("md:col-span-3 md:flex flex-row  md:w-3/4 md:gap-10")}>
+          <div
+            className={cn("flex-row md:col-span-3 md:flex md:w-3/4 md:gap-10")}
+          >
             <Search1 />
+
             <Cart1 />
           </div>
         </div>
@@ -47,7 +50,7 @@ export default function Header() {
           <div className=""></div>
           <div className={cn("md:col-span-3")}>
             <div className="w-fit">
-              <Sidebar1 key_={"header"}  func={"not-filter"} where={"md"} />
+              <Sidebar1 key_={"header"} func={"not-filter"} where={"md"} />
             </div>
             <div className={cn("max-sm:col-span-6 max-sm:w-full")}>
               <Menubar1 />
