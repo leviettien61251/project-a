@@ -38,9 +38,9 @@ export default function Filter1() {
   return (
     <>
       <div className={cn("md:flex md:h-fit md:flex-row md:gap-2")}>
-        <Sidebar1 key_={"filter1"}  func={"filter"} where={"filter"} />
+        <Sidebar1 key_={"SidebarFilter"} func={"filter"} where={"filter"} />
         {filterTitle?.map((item) => (
-          <DropdownMenu key={item.title}>
+          <DropdownMenu>
             <DropdownMenuTrigger
               className={cn(
                 "flex flex-row items-center justify-between gap-3 border-1 outline-none",
@@ -49,11 +49,13 @@ export default function Filter1() {
             >
               {item.title} <ChevronDown className="" />
             </DropdownMenuTrigger>
-            <DropdownMenuPortal>
-              <DropdownMenuContent className={cn("", "h-[20rem] md:w-[30rem]")}>
-                <DropdownMenuLabel>Label Product1 & 2</DropdownMenuLabel>
-              </DropdownMenuContent>
-            </DropdownMenuPortal>
+
+            <DropdownMenuContent
+              className={cn("", "h-[20rem] md:w-[30rem]")}
+            >
+              <DropdownMenuLabel>{item.title}</DropdownMenuLabel>
+              <DropdownMenuItem>item 1</DropdownMenuItem>
+            </DropdownMenuContent>
           </DropdownMenu>
         ))}
       </div>

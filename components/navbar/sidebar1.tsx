@@ -72,7 +72,6 @@ export default function Sidebar1({ key_, func, where }: SidebarProps) {
   return (
     <>
       <div
-        key={key_}
         className={cn(
           where === "md" ? "hidden" : "flex",
           "max-sm:h-fit max-sm:w-fit max-sm:bg-inherit",
@@ -109,7 +108,7 @@ export default function Sidebar1({ key_, func, where }: SidebarProps) {
             "transition-all delay-150 duration-1000 ease-in",
           )}
         >
-          <div className={cn("relative flex h-full w-full flex-col gap-2", "")}>
+          <div className={cn("relative flex h-full w-full flex-col gap-2")}>
             {func === "filter" ? (
               <FilterSidebar
                 func={func}
@@ -123,17 +122,14 @@ export default function Sidebar1({ key_, func, where }: SidebarProps) {
               //{/* ---------------------------------------------------------------------------------------------------- */}
 
               sideBarTitle?.map((item) => (
-                <>
-                  <li
-                    key={item.number}
-                    className={cn(
-                      "w-auto overflow-hidden font-bold text-black",
-                      "max-sm:text-xl",
-                    )}
-                  >
-                    {item.title}
-                  </li>
-                </>
+                <li
+                  className={cn(
+                    "w-auto overflow-hidden font-bold text-black",
+                    "max-sm:text-xl",
+                  )}
+                >
+                  {item.title}
+                </li>
               ))
             )}
             {/* ---------------------------------------------------------------------------------------------------- */}

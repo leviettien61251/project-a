@@ -37,30 +37,28 @@ export default function Menubar1() {
     // },
   ];
   return (
-    <>
-      <Menubar
-        className={cn(
-          "h-[4rem] border-0 bg-black",
-          "max-sm:w-[97%] max-sm:justify-center",
-          "md:w-full md:gap-10 md:rounded-none",
-          "min-[768px]:max-sm:pl-5",
-        )}
-      >
-        <MenubarMenu key={"all-product"}>
-          <Link href={`/product/all-product`}>
-            <MenubarTrigger className="hover:bg-inherit">
-              All Product
-            </MenubarTrigger>
-          </Link>
-        </MenubarMenu>
-        {abc?.map((item) => (
-          <Link href={`/product/${item.href}`}>
-            <MenubarMenu key={item.number}>
-              <MenubarTrigger>{item.title}</MenubarTrigger>
-            </MenubarMenu>
-          </Link>
-        ))}
-      </Menubar>
-    </>
+    <Menubar
+      className={cn(
+        "h-[4rem] border-0 bg-black",
+        "max-sm:w-[97%] max-sm:justify-center",
+        "md:w-full md:gap-10 md:rounded-none",
+        "min-[768px]:max-sm:pl-5",
+      )}
+    >
+      <MenubarMenu key={"all-product"}>
+        <Link href={`/product/all-product`}>
+          <MenubarTrigger className="hover:bg-inherit">
+            All Product
+          </MenubarTrigger>
+        </Link>
+      </MenubarMenu>
+      {abc?.map((item) => (
+        <Link href={`/product/${item.href}`}>
+          <MenubarMenu key={item.number}>
+            <MenubarTrigger>{item.title}</MenubarTrigger>
+          </MenubarMenu>
+        </Link>
+      ))}
+    </Menubar>
   );
 }
