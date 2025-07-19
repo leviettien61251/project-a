@@ -121,12 +121,7 @@
   }
 }
 
-.w-h-36 {
-  width: 36px;
-  height: 36px;
-}
-
-.dot-5px {
-  width: 5px;
-  height: 5px;
+@utility wh-25 {
+  width: 25px;
+  height: 25px;
 }

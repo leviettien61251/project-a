@@ -7,8 +7,10 @@ export default function CartLayout({
 }) {
   return (
     <>
-      <Header />
-      {children}
+      <div>
+        <Header />
+        <main>{children}</main>
+      </div>
     </>
   );
 }

@@ -50,7 +50,7 @@ export default function Header() {
           <div className=""></div>
           <div className={cn("md:col-span-3")}>
             <div className="w-fit">
-              <Sidebar1 key_={"header"} func={"not-filter"} where={"md"} />
+              <Sidebar1  key_={"header"} func={"not-filter"} where={"md"} />
             </div>
             <div className={cn("max-sm:col-span-6 max-sm:w-full")}>
               <Menubar1 />

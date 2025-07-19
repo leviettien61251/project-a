@@ -4,6 +4,9 @@ module.exports = {
       transitionProperty: {
         height: "height",
       },
+      backgroundImage: {
+        'caroBlueWhite': "url('/caro_blue_white.jpg')",
+      },
     },
   },
 };

@@ -8,7 +8,7 @@ export default function HomePageLayout({
   return (
     <>
       <Header />
-      {children}
+      <main>{children}</main>
     </>
   );
 }
