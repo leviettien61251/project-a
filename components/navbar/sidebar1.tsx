@@ -122,7 +122,7 @@ export default function Sidebar1({ key_, func, where }: SidebarProps) {
               //{/* ---------------------------------------------------------------------------------------------------- */}
 
               sideBarTitle?.map((item) => (
-                <li
+                <li key={item.title}
                   className={cn(
                     "w-auto overflow-hidden font-bold text-black",
                     "max-sm:text-xl",

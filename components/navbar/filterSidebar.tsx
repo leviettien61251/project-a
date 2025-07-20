@@ -48,7 +48,10 @@ export default function FilterSidebar({
         {/* ---------------------------------------------------------------------------------------------------- */}
         <ul className={cn("flex flex-col", "md:mt-10 md:gap-5 md:px-10")}>
           {filterTitle?.map((item) => (
-            <li className={cn("flex flex-col", "overflow-hidden")}>
+            <li
+              key={item.title + "filterSidebar"}
+              className={cn("flex flex-col", "overflow-hidden")}
+            >
               <div className="flex flex-row justify-between">
                 <h3 className={cn("md:text-lg")}>{item.title}</h3>
                 <Plus
