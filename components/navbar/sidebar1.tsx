@@ -90,7 +90,7 @@ export default function Sidebar1({ key_, func, where }: SidebarProps) {
 
       <aside
         className={cn(
-          "fixed top-0 left-0 z-[999] h-screen border-r-2 bg-white",
+          "fixed top-0 left-[-2px] z-[999] h-screen border-r-2 bg-white",
           func === "filter"
             ? "max-sm:w-full md:w-[30%]"
             : "max-sm:w-[80%] md:w-[10rem]",

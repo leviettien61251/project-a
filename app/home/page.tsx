@@ -1,12 +1,13 @@
 import Header from "@/components/header/header";
+import Slider1 from "@/components/slider/slider1";
 
 export default function HomePage() {
   return (
     <>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. In exercitationem
-      fugiat ea architecto ad explicabo recusandae quam nihil, quaerat
-      perferendis, alias suscipit eveniet, dolor natus ipsum eius impedit labore
-      quibusdam?
+      <h1 className="m-10 text-center text-3xl font-bold underline">
+        HOME PAGE
+      </h1>
+      <Slider1 />
     </>
   );
 }
