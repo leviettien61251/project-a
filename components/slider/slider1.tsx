@@ -89,7 +89,7 @@ export default function Slider1() {
                 : index < index_
                   ? "left-[-100%] z-0"
                   : "left-[100%] z-0",
-              "transition-all delay-200 duration-2000 ease-in",
+              "transition-all delay-200 duration-1500 ease-in",
             )}
           >
             <Image

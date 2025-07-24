@@ -15,25 +15,25 @@ export default function Header() {
         className={cn(
           "flex",
           "max-sm:relative max-sm:flex-col max-sm:gap-4",
-          "md:mb-4 md:flex-col md:items-center md:pt-[0.5rem]",
+          "md:flex-col md:items-center md:pt-[0.5rem]",
         )}
       >
         <div
           className={cn(
             "w-full",
             "max-lg:p-0",
-            "md:mt-5 md:mb-10 md:grid md:grid-cols-5",
+            "md:mt-5 md:mb-10 md:grid md:grid-cols-7",
             // "min-md:px-5"
           )}
         >
           <div className=""></div>
           <div className={cn("max-sm:w-full")}>
-            <Link href={"/home"}>
+            <Link href={"/home"} className="w-fit block">
               <Image src={logo2} width={100} height={70} alt="Name" />
             </Link>
           </div>
           <div
-            className={cn("flex-row md:col-span-3 md:flex md:w-3/4 md:gap-10")}
+            className={cn("flex-row md:col-span-5 md:flex md:w-3/4 md:gap-10")}
           >
             <Search1 />
 
@@ -44,11 +44,11 @@ export default function Header() {
           className={cn(
             "bg-black md:w-full",
             "max-sm:grid max-sm:grid-cols-7 max-sm:items-center max-sm:justify-items-center",
-            "md:grid md:grid-cols-5",
+            "md:grid md:grid-cols-7",
           )}
         >
           <div className=""></div>
-          <div className={cn("md:col-span-3")}>
+          <div className={cn("md:col-span-5")}>
             <div className="w-fit">
               <Sidebar1 key_={"header"} func={"not-filter"} where={"md"} />
             </div>

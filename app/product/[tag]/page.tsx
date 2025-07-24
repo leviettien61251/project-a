@@ -35,16 +35,18 @@ export default function Page({ children }: { children: React.ReactNode }) {
   const params = useParams<{ tag: string; detail: string }>();
   return (
     <>
-      <main className={cn("h-[50rem] w-full", "md:grid md:grid-cols-6")}>
+      <main
+        className={cn("h-[50rem] w-full", "md:mt-4 md:grid md:grid-cols-7")}
+      >
         <div></div>
-        <div className={cn("md:col-span-4", "md:flex md:flex-col md:gap-5")}>
+        <div className={cn("md:col-span-5", "md:flex md:flex-col md:gap-5")}>
           <h1 className={cn("md:text-5xl")}>{params.tag.toUpperCase()}</h1>
           <Filter1 />
           {/*  */}
           <div
             className={cn(
               "h-auto w-full bg-red-800",
-              "md:grid md:grid-cols-4 md:grid-rows-7 ",
+              "md:grid md:grid-cols-4 md:grid-rows-7",
             )}
           >
             {/* ========================== */}
