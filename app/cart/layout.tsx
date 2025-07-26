@@ -1,4 +1,7 @@
+"use client";
+
 import Header from "@/components/header/header";
+import { useParams } from "next/navigation";
 
 export default function CartLayout({
   children,
@@ -8,7 +11,7 @@ export default function CartLayout({
   return (
     <>
       <div>
-        <Header />
+        <Header  />
         <main>{children}</main>
       </div>
     </>

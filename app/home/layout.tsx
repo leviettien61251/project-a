@@ -7,7 +7,7 @@ export default function HomePageLayout({
 }) {
   return (
     <>
-      <Header />
+      <Header params=""/>
       <main>{children}</main>
     </>
   );

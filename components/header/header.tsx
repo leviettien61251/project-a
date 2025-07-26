@@ -7,28 +7,34 @@ import { cn } from "@/lib/utils";
 import Sidebar1 from "../navbar/sidebar1";
 import Menubar1 from "../menubar/menubar1";
 import Link from "next/link";
+import { useParams } from "next/navigation";
+
+interface headerProps {
+  params: string;
+}
 
 export default function Header() {
   return (
     <>
+      
       <div
         className={cn(
           "flex",
           "max-sm:relative max-sm:flex-col max-sm:gap-4",
-          "md:flex-col md:items-center md:pt-[0.5rem]",
+          "md:flex-col md:items-center",
         )}
       >
         <div
           className={cn(
             "w-full",
             "max-lg:p-0",
-            "md:mt-5 md:mb-10 md:grid md:grid-cols-7",
+            "bg-white md:grid md:grid-cols-7 md:pt-3 md:pb-3",
             // "min-md:px-5"
           )}
         >
           <div className=""></div>
           <div className={cn("max-sm:w-full")}>
-            <Link href={"/home"} className="w-fit block">
+            <Link href={"/home"} className="block w-fit">
               <Image src={logo2} width={100} height={70} alt="Name" />
             </Link>
           </div>
@@ -42,9 +48,9 @@ export default function Header() {
         </div>
         <div
           className={cn(
-            "bg-black md:w-full",
+            "bg-black",
             "max-sm:grid max-sm:grid-cols-7 max-sm:items-center max-sm:justify-items-center",
-            "md:grid md:grid-cols-7",
+            "md:grid md:h-fit md:w-full md:grid-cols-7",
           )}
         >
           <div className=""></div>

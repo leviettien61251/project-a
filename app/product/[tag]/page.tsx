@@ -35,9 +35,7 @@ export default function Page({ children }: { children: React.ReactNode }) {
   const params = useParams<{ tag: string; detail: string }>();
   return (
     <>
-      <main
-        className={cn("h-[50rem] w-full", "md:mt-4 md:grid md:grid-cols-7")}
-      >
+      <main className={cn("h-screen w-full", "md:mt-4 md:grid md:grid-cols-7")}>
         <div></div>
         <div className={cn("md:col-span-5", "md:flex md:flex-col md:gap-5")}>
           <h1 className={cn("md:text-5xl")}>{params.tag.toUpperCase()}</h1>
@@ -57,13 +55,16 @@ export default function Page({ children }: { children: React.ReactNode }) {
                 className={cn("")}
               >
                 <article className="flex h-[30rem] w-full flex-col justify-evenly gap-2 bg-white">
-                  <Image
-                    src={product.image}
-                    width={291}
-                    height={336}
-                    alt=""
-                    className={cn("!h-[70%] !w-full bg-amber-300")}
-                  />
+                  <div className={cn("h-[80%] w-full overflow-hidden")}>
+                    <Image
+                      src={product.image}
+                      width={600}
+                      height={800}
+                      alt=""
+                      className={cn("bg-amber-300")}
+                    />
+                  </div>
+
                   <div className={cn("flex flex-row justify-between")}>
                     <div>
                       <ul className={cn("flex flex-row gap-2")}>
@@ -101,19 +102,19 @@ export default function Page({ children }: { children: React.ReactNode }) {
                         "flex flex-row justify-between text-sm text-slate-400",
                       )}
                     >
-                      <p>{"MEN"}</p>
-                      <p>
+                      <h3>{"MEN"}</h3>
+                      <h4>
                         {product.size[0]} - {product.size[4]}
-                      </p>
+                      </h4>
                     </div>
                     <div>
-                      <h3>{product.name}</h3>
+                      <h4>{product.name}</h4>
                     </div>
                     <div>
-                      <p className={cn("font-bold", "md:text-lg")}>
+                      <h4 className={cn("font-bold", "md:text-lg")}>
                         <span>{product.price}</span>
                         <abbr className={cn("text-sm")}> USD</abbr>
-                      </p>
+                      </h4>
                     </div>
                     <div
                       className={cn(

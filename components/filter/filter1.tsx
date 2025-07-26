@@ -18,6 +18,7 @@ import {
 import { cn } from "@/lib/utils";
 import { use, useEffect, useState } from "react";
 import Sidebar1 from "../navbar/sidebar1";
+import Select1 from "../select/select1";
 
 interface OptionItem {
   title: string;
@@ -55,8 +56,8 @@ export default function Filter1() {
       values: ["Under $20", "$20–$50", "$50–$100", "Above $100"],
     },
   ];
-  const [isShowHide, setIsShowHide] = useState<Boolean>(false);
-  const [checked, setChecked] = useState<String>("");
+  const [isShowHide, setIsShowHide] = useState<boolean>(false);
+  const [checked, setChecked] = useState<string>("");
   // const [option, setOption] = useState<OptionItem[]>([]);
   // setOption(option_);
   // const handleData = (data: any) => {
@@ -82,19 +83,22 @@ export default function Filter1() {
             <DropdownMenuContent
               className={cn(
                 "flex flex-col",
-                "md:h-[20rem] md:w-[30rem] md:gap-5 md:px-5",
+                "md:h-[20rem] md:w-[30rem] md:gap-0 md:px-5",
               )}
             >
-              <DropdownMenuLabel>{item.title}</DropdownMenuLabel>
+              <DropdownMenuLabel
+                className={cn("flex flex-row justify-between")}
+              >
+                {item.title} <X className={cn("")} />
+              </DropdownMenuLabel>
               <div className={cn("flex flex-row justify-between")}>
-                <h2>Results: {12} items</h2>
-                <X className={cn("")} />
+                <h2 className="">Results: {12} items</h2>
               </div>
               <div>
                 <h3>
                   MEN {">"} Sweatshirts & Hoodies {">"}
                 </h3>
-                <div className="">
+                <div className="absolute w-[90%] bg-white">
                   <div
                     className={cn(
                       "flex flex-row items-center justify-between",
@@ -112,7 +116,7 @@ export default function Filter1() {
                   <ul
                     id={item.title}
                     className={cn(
-                      "absolue z-50 w-full border-1 outline-0",
+                      "absolute z-50 w-full border-1 outline-0",
                       isShowHide ? "block" : "hidden",
                       "overflow-visible",
                     )}
@@ -124,7 +128,7 @@ export default function Filter1() {
                         className={cn(
                           "flex flex-row items-center justify-between border-1 outline-0",
                           "md:h-10 md:px-2",
-                          "hover:bg-accent",
+                          "hover:bg-accent bg-white",
                         )}
                         onClick={() => {
                           setChecked(value);

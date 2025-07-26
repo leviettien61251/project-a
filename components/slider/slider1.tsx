@@ -64,7 +64,7 @@ export default function Slider1() {
 
   return (
     <div
-      className={cn("relative h-[35rem] w-full bg-red-700", "flex flex-row")}
+      className={cn("relative h-[40rem] w-full bg-red-700", "flex flex-row")}
     >
       <Button
         type={"button"}
@@ -76,44 +76,42 @@ export default function Slider1() {
         }}
       >
         <ChevronLeft />
-        {index_}
       </Button>
-      <ul className={cn("relative w-full overflow-hidden")}>
+
+      <ul className={cn("relative h-full w-full")}>
         {data.map((item, index) => (
           <li
             key={item.name + "li"}
             className={cn(
-              "absolute w-screen",
-              index === index_
-                ? "left-0 z-10"
-                : index < index_
-                  ? "left-[-100%] z-0"
-                  : "left-[100%] z-0",
+              "absolute w-full",
+              index === index_ ? "opacity-100" : "opacity-0",
+              // index === index_
+              //   ? "left-0 z-10"
+              //   : index < index_
+              //     ? "left-[100%] z-0"
+              //     : "left-[-100%] z-0",
               "transition-all delay-200 duration-1500 ease-in",
             )}
           >
             <Image
               key={item.name + "image"}
               src={item.url}
-              width={1700}
+              width={500}
               height={500}
               alt={item.name}
-              sizes={"(w-full) 100vw, 33vw"}
-              className="overflow-hidden"
             />
           </li>
         ))}
       </ul>
       <Button
         type={"button"}
-        className="absolute right-0 z-20 self-center"
+        className="absolute right-0 z-20 self-center "
         onClick={(e) => {
           rightClick();
           setIsLeft(false);
         }}
       >
         <ChevronRight />
-        {index_}
       </Button>
     </div>
   );
