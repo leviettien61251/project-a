@@ -53,10 +53,10 @@ export default function Page() {
                     alt={item.name + "img"}
                   />
                 </div>
-                <div className={"grid h-full w-full grid-cols-2"}>
+                <div className={"h-full w-full"}>
                   <div
                     className={cn(
-                      "relative flex h-full grow flex-col justify-between",
+                      "relative flex h-full w-full grow flex-col justify-between",
                     )}
                   >
                     <section className={cn("flex flex-col")}>
@@ -77,74 +77,118 @@ export default function Page() {
                           <abbr className="text-xs">USD</abbr>
                         </h4>
                       </div>
+                      <X className={cn("absolute top-0 right-5")} />
                     </section>
-                    <div className={cn("md:w-1/5")}>
-                      <h1 className="text-lg font-bold">QUANTITY</h1>
-                      <div className="relative">
-                        <div
-                          className={cn(
-                            "flex flex-row items-center justify-between",
-                            "border-1 md:h-10 md:px-2",
-                          )}
-                          onClick={() => {
-                            isShowHide === item.id
-                              ? setIsShowHide(item.id + 129)
-                              : setIsShowHide(item.id);
-                          }}
-                        >
-                          <span>1</span>
-                          <span>
-                            <ChevronDown />
-                          </span>
-                        </div>
-                        {isShowHide === item.id ? (
-                          <ul
-                            key={item.id + "dropdown"}
-                            id={item.name}
+                    <div className={cn("relative flex flex-row md:w-full")}>
+                      <div className="relative w-1/2">
+                        <h1 className="text-lg font-bold">QUANTITY</h1>
+                        <div className="relative md:w-1/3">
+                          <div
                             className={cn(
-                              "absolute z-50 w-full border-1 outline-0",
-                              isShowHide ? "block" : "hidden",
-                              "overflow-visible",
+                              "flex flex-row items-center justify-between",
+                              "border-1 md:h-10 md:px-2",
                             )}
+                            onClick={() => {
+                              isShowHide === item.id
+                                ? setIsShowHide(item.id + 129)
+                                : setIsShowHide(item.id);
+                            }}
                           >
-                            {Array.from({ length: 9 }).map((item_, index) => (
-                              <li
-                                key={index + "quantity"}
-                                value={index + 1}
-                                className={cn(
-                                  "relative flex flex-row items-center justify-between border-1 outline-0",
-                                  "md:h-10 md:px-2",
-                                  "hover:bg-accent bg-white",
-                                )}
-                                onClick={() => {
-                                  setChecked(item.id);
+                            <span>1</span>
+                            <span>
+                              <ChevronDown />
+                            </span>
+                          </div>
+                          {isShowHide === item.id ? (
+                            <ul
+                              key={item.id + "dropdown"}
+                              id={item.name}
+                              className={cn(
+                                "absolute z-50 w-full border-1 outline-0",
+                                isShowHide ? "block" : "hidden",
+                                "overflow-visible",
+                              )}
+                            >
+                              {Array.from({ length: 9 }).map((item_, index) => (
+                                <li
+                                  key={index + "quantity"}
+                                  value={index + 1}
+                                  className={cn(
+                                    "relative flex flex-row items-center justify-between border-1 outline-0",
+                                    "md:h-10 md:px-2",
+                                    "hover:bg-accent bg-white",
+                                  )}
+                                  onClick={() => {
+                                    setChecked(item.id);
 
-                                  console.log(item.id);
-                                }}
-                              >
-                                {index + 1}
-                              </li>
-                            ))}
+                                    console.log(item.id);
+                                  }}
+                                >
+                                  {index + 1}
+                                </li>
+                              ))}
 
-                            {/* ))} */}
-                          </ul>
-                        ) : (
-                          <></>
-                        )}
+                              {/* ))} */}
+                            </ul>
+                          ) : (
+                            <></>
+                          )}
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                  <div className={cn("relative h-full w-full bg-black", "")}>
-                    <X className={cn("absolute", "md:top-0 md:right-0")} />
-                    <div>
-                      <h4>SUBTOTAL: {index}</h4>
+
+                      <div className={cn("flex items-center", "md:w-1/2")}>
+                        <h4 className="text-sm font-bold">
+                          <span>
+                            SUBTOTAL: {index} <abbr>USD</abbr>
+                          </span>
+                        </h4>
+                      </div>
                     </div>
                   </div>
                 </div>
               </article>
             ))}
           </div>
-          <div className="h-[60rem] w-2/5 bg-blue-500"></div>
+          <div className={cn("h-[60rem] w-2/5", "")}>
+            <div className={cn("border-2", "flex flex-col gap-4", "md:p-5")}>
+              <div className="">
+                <h3 className={cn("text-lg font-bold")}>
+                  ORDER SUMARY| 3 ITEM(S)
+                </h3>
+              </div>
+              <div className="flex flex-row justify-between">
+                <h4>Item(s) subtotal</h4>
+                <h5>
+                  2.155.000
+                  <span> VND</span>
+                </h5>
+              </div>
+              <div className="flex flex-row justify-between">
+                <h3 className={cn("text-lg font-bold")}>SUBTOTAL</h3>
+                <h3 className={cn("text-lg font-bold")}>
+                  2.155.000
+                  <span> VND</span>
+                </h3>
+              </div>
+              <div className="flex flex-row justify-between">
+                <h4>VAT included</h4>
+                <h5>
+                  2.155.000
+                  <span> VND</span>
+                </h5>
+              </div>
+              <div className="flex flex-row justify-between">
+                <h3 className={cn("text-lg font-bold")}>ORDER TOTAL</h3>
+                <h3 className={cn("text-lg font-bold")}>
+                  2.155.000
+                  <span> VND</span>
+                </h3>
+              </div>
+            </div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
         </div>
       </div>
       <div></div>
