@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/utils";
 import { ChevronLeft, Plus } from "lucide-react";
 interface FilterTitleItem {
   title: string;

@@ -4,7 +4,7 @@ import { AlignLeft, ChevronLeft, Plus } from "lucide-react";
 import { Button } from "../ui/button";
 import { Sidebar, SidebarProvider, SidebarTrigger } from "../ui/sidebar";
 import { AppSidebar } from "../app-sidebar";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/utils";
 import { useState } from "react";
 import { title } from "process";
 import { DropdownMenu } from "../ui/dropdown-menu";

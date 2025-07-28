@@ -15,7 +15,7 @@ import {
   DropdownMenuPortal,
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/utils";
 import { use, useEffect, useState } from "react";
 import Sidebar1 from "../navbar/sidebar1";
 import Select1 from "../select/select1";

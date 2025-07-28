@@ -3,11 +3,10 @@ import logo2 from "@/assets/logo/logo2.png";
 import Image from "next/image";
 import Search1 from "../search/search1";
 import { AlignLeft } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/utils";
 import Sidebar1 from "../navbar/sidebar1";
 import Menubar1 from "../menubar/menubar1";
 import Link from "next/link";
-import { useParams } from "next/navigation";
 
 interface headerProps {
   params: string;
@@ -16,7 +15,6 @@ interface headerProps {
 export default function Header() {
   return (
     <>
-      
       <div
         className={cn(
           "flex",

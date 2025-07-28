@@ -1,10 +1,19 @@
 "use client";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/utils";
 import Image from "next/image";
 import list from "@/data/product";
 import { useEffect, useState } from "react";
-import { Check, ChevronDown, X } from "lucide-react";
-import { useParams } from "next/navigation";
+import {
+  Check,
+  ChevronDown,
+  X,
+  BadgePercent,
+  Gift,
+  ChevronRight,
+  CircleAlert,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 interface Product {
   id: number;
@@ -37,8 +46,8 @@ export default function Page() {
       <div></div>
       <div className={cn("w-full", "md:col-span-5")}>
         <h1 className="text-3xl font-bold md:mb-6">SHOPPING CART</h1>
-
-        <div className={cn("", "flex flex-row")}>
+        {/* ------------------------------------------ */}
+        <div className={cn("", "flex flex-row gap-5")}>
           <div className={cn("flex flex-col gap-20", "md:w-3/5")}>
             {data.map((item, index) => (
               <article
@@ -59,6 +68,7 @@ export default function Page() {
                       "relative flex h-full w-full grow flex-col justify-between",
                     )}
                   >
+                    {/* ------------------------------------------ */}
                     <section className={cn("flex flex-col")}>
                       <div>
                         <h3 className={cn("font-bold md:text-2xl")}>
@@ -74,11 +84,12 @@ export default function Page() {
                       <div>
                         <h4 className="font-bold">
                           <span>{item.price}</span>
-                          <abbr className="text-xs">USD</abbr>
+                          <abbr className="text-xs"> USD</abbr>
                         </h4>
                       </div>
                       <X className={cn("absolute top-0 right-5")} />
                     </section>
+                    {/* ------------------------------------------ */}
                     <div className={cn("relative flex flex-row md:w-full")}>
                       <div className="relative w-1/2">
                         <h1 className="text-lg font-bold">QUANTITY</h1>
@@ -149,7 +160,8 @@ export default function Page() {
               </article>
             ))}
           </div>
-          <div className={cn("h-[60rem] w-2/5", "")}>
+          <div className={cn("h-[60rem] w-2/5", "flex flex-col gap-5")}>
+            {/* ------------------------------------------ */}
             <div className={cn("border-2", "flex flex-col gap-4", "md:p-5")}>
               <div className="">
                 <h3 className={cn("text-lg font-bold")}>
@@ -185,9 +197,88 @@ export default function Page() {
                 </h3>
               </div>
             </div>
-            <div></div>
-            <div></div>
-            <div></div>
+            <div
+              className={cn(
+                "h-fit w-full border-t-2",
+                "md:py-5",
+                "flex flex-row items-center gap-2",
+              )}
+            >
+              <div>
+                <BadgePercent />
+              </div>
+              <div className={cn("flex-1")}>
+                <h4 className={cn("text-lg")}>Counpon</h4>
+              </div>
+              <div>
+                <ChevronRight />{" "}
+              </div>
+            </div>
+
+            {/* ------------------------------------------ */}
+            <div
+              className={cn(
+                "h-fit w-full border-t-2",
+                "md:py-5",
+                "flex flex-row items-center gap-2",
+              )}
+            >
+              <div>
+                <Gift />
+              </div>
+              <div className={cn("flex-1")}>
+                <h4 className={cn("text-lg")}>Gift options</h4>
+              </div>
+              <div>
+                <ChevronRight />{" "}
+              </div>
+            </div>
+            {/* ------------------------------------------ */}
+
+            <div className={cn("flex flex-col gap-3")}>
+              <div className={cn("w-full", "flex flex-row items-center")}>
+                <p className={cn("flex-1 md:pr-4")}>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Iusto, eligendi. Laboriosam voluptatem architecto eaque totam
+                  laudantium accusantium dolorem vel temporibus aperiam
+                  necessitatibus, dignissimos quasi iste asperiores dolorum
+                  obcaecati quaerat id.
+                </p>
+                <div>
+                  <CircleAlert />
+                </div>
+              </div>
+              <div className={cn("w-full")}>
+                <Button
+                  className={cn(
+                    "h-[4rem] w-full bg-red-600",
+                    "rounded-none border-0 outline-0",
+                    "text-lg font-bold text-white",
+                    "hover:bg-red-500",
+                  )}
+                >
+                  CHECKOUT
+                </Button>
+              </div>
+              <div className={cn("w-full")}>
+                <Link href={"/home"}>
+                  <Button
+                    className={cn(
+                      "h-[4rem] w-full bg-white",
+                      "rounded-none border-1 outline-0",
+                      "text-lg font-bold text-black",
+                      "hover:bg-accent",
+                    )}
+                  >
+                    CONTINUE SHOPPING
+                  </Button>
+                </Link>
+              </div>
+            </div>
+
+            {/* ------------------------------------------ */}
+
+            {/* ------------------------------------------ */}
           </div>
         </div>
       </div>

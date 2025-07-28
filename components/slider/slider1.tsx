@@ -2,7 +2,7 @@
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/utils";
 import list from "@/data/product";
 import cars from "@/data/car-list";
 import { Button } from "../ui/button";

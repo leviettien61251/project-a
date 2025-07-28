@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/utils";
 import { Menubar, MenubarMenu, MenubarTrigger } from "../ui/menubar";
 import abc from "@/data/product";
 import Link from "next/link";

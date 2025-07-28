@@ -2,7 +2,7 @@ import Form from "next/form";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { Search } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/utils";
 
 export default function Search1() {
   return (
